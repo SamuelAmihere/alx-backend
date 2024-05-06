@@ -44,7 +44,7 @@ class Server:
         start, end = index_range(page, page_size)
         data = self.dataset()
         return data[start:end]
-    
+
     def get_hyper(self, page: int = 1, page_size: int = 10) -> dict:
         """
         Returns a dictionary containing the following key-value pairs
