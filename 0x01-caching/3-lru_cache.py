@@ -2,9 +2,7 @@
 """
 LRU Caching:
 """
-
-
-BaseCaching = __import__('base_caching').BaseCaching
+from base_caching import BaseCaching
 
 
 class LRUCache(BaseCaching):
