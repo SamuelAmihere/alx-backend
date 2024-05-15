@@ -1,7 +1,10 @@
 #!/usr/bin/env python3
 """
 Basic Babel: Internationalization in Flask
+
 Create a get_locale function with the babel.localeselector
+decorator. Use request.accept_languages to determine the best
+match with our supported languages.
 """
 from flask_babel import Babel
 from flask import Flask, render_template, request
@@ -21,13 +24,13 @@ app.config.from_object('1-app.Config')
 babel = Babel(app)
 app.url_map.strict_slashes = False
 
+
 @babel.localeselector
 def get_locale():
     """
     get locale
     """
-    return request.accept_languages\
-        .best_match(app.config['LANGUAGES'])
+    return request.accept_languages.best_match(app.config['LANGUAGES'])
 
 
 @app.route('/', methods=['GET'])
