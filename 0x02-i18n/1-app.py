@@ -2,8 +2,8 @@
 """
 Basic Babel: Internationalization in Flask
 """
-from flask import Flask, render_template
 from flask_babel import Babel
+from flask import Flask, render_template
 
 
 class Config:
@@ -13,8 +13,8 @@ class Config:
 
 
 app = Flask(__name__)
-babel = Babel(app)
 app.config.from_object('1-app.Config')
+babel = Babel(app)
 app.url_map.strict_slashes = False
 
 
